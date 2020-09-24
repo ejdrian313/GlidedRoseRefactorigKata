@@ -43,9 +43,6 @@ class AgedBrie(private val item: Item) : Manageable {
 
     private fun sellInLessThanZero() = item.sellIn < 0
 
-    override fun toString(): String {
-        return item.toString()
-    }
 }
 
 class BackstagePass(private val item: Item) : Manageable {
@@ -73,10 +70,6 @@ class BackstagePass(private val item: Item) : Manageable {
 
     private fun sellInLessThanZero() = item.sellIn < 0
 
-    override fun toString(): String {
-        return item.toString()
-    }
-
     private fun increaseQualitySpecial() {
         if (item.sellIn < 11) {
             increaseQuality()
@@ -96,10 +89,6 @@ class Sulfuras(private val item: Item) : Manageable {
 
     private fun increaseQuality() {
         item.quality = _quality.increase()
-    }
-
-    override fun toString(): String {
-        return item.toString()
     }
 }
 
@@ -122,10 +111,6 @@ class DefaultItem(private val item: Item) : Manageable {
     }
 
     private fun sellInLessThanZero() = item.sellIn < 0
-
-    override fun toString(): String {
-        return item.toString()
-    }
 }
 
 class Quality(private var value: Int) {
