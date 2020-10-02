@@ -6,6 +6,7 @@ object ItemFactory {
             "Aged Brie" -> AgedBrie(item)
             "Backstage passes to a TAFKAL80ETC concert" -> BackstagePass(item)
             "Sulfuras, Hand of Ragnaros" -> Sulfuras(item)
+            "Conjured" -> Conjured(item)
             else -> DefaultItem(item)
         }
     }

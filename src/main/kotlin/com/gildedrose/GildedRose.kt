@@ -6,8 +6,8 @@ import com.gildedrose.items.ItemFactory
 class GildedRose(var items: Array<Item>) {
 
     fun updateQuality() {
-        for (i in items.indices) {
-            val item = ItemFactory.create(items[i])
+        for (it in items) {
+            val item = ItemFactory.create(it)
             item.update()
         }
     }
