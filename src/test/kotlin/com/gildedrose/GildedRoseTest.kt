@@ -28,9 +28,30 @@ internal class GildedRoseTest {
     }
 
     @Test
+    fun testElseItemQualityZero() {
+        val app = GildedRose(arrayOf(Item("Foo bar", -5, 0)))
+        app.updateQuality()
+        assertEquals(0, app.items[0].quality)
+    }
+
+    @Test
     fun testSulfurasQuality() {
         val app = GildedRose(arrayOf(Item("Sulfuras, Hand of Ragnaros", -5, 40)))
         app.updateQuality()
         assertEquals(41, app.items[0].quality)
+    }
+
+    @Test
+    fun conjuredQuality() {
+        val app = GildedRose(arrayOf(Item("Conjured", 30, 30)))
+        app.updateQuality()
+        assertEquals(28, app.items[0].quality)
+    }
+
+    @Test
+    fun conjuredQualitySellIn() {
+        val app = GildedRose(arrayOf(Item("Conjured", -3, 30)))
+        app.updateQuality()
+        assertEquals(26, app.items[0].quality)
     }
 }
